@@ -1,4 +1,4 @@
-# Late by Design · predicting late order lines
+# Late by Design · Predicting Late Order Lines
 
 Python companion to the Power BI report *Late by Design* (industrial parts distributor, anonymised order lines, Jan 2024 – Feb 2026).
 The dashboard shows that 29% of shipped lines are late and that backorders are late 3× as often. This notebook predicts late lines at order entry,
@@ -11,13 +11,13 @@ explains each prediction with SHAP, and tests whether lateness is built into the
 | Why is a line flagged? | SHAP importance, beeswarm, dependence on promised lead time and promise gap, waterfall for a single line |
 | Is lateness designed in? | Late rate by promise vs supplier lead time; simulation of a "never promise faster than the supplier" rule |
 
-## Headline results
+## Headline Results
 * Out-of-time ROC AUC 0.82 (backorder rule 0.70). The riskiest 10% of lines catch 30% of late lines at 84% precision, and the riskiest 20% catch 49%.
 * Stock on hand and the length of the promise drive most of the risk.
 * 46% of backordered lines are promised faster than the supplier's own lead time, and they are late 58–63% of the time.
 * Matching the promise to the supplier's lead time would cut the late rate from 29.4% to 23.8% without shipping anything faster.
 
-## Run it
+## Run It
 ```bash
 pip install -r requirements.txt
 jupyter notebook "Late by Design Deep Dive.ipynb"
